@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<LangVersion>preview</LangVersion>
+		<TargetFrameworks>net472</TargetFrameworks>
+		<AssemblyName>SMarket</AssemblyName>
+		<RootNamespace>SMarket</RootNamespace>
+		<NoWarn>$(NoWarn);CS0436</NoWarn>
+		<RunPostBuildEvent>Always</RunPostBuildEvent>
+		<Nullable>annotations</Nullable>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)Generated</CompilerGeneratedFilesOutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="lib\**" />
+		<Compile Remove="Tests\**" />
+		<EmbeddedResource Remove="lib\**" />
+		<EmbeddedResource Remove="Tests\**" />
+		<None Remove="lib\**" />
+		<None Remove="Tests\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Legacy2CPSWorkaround" Version="1.0.0">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="MySql.EntityFrameworkCore" Version="3.1.10" />
+		<PackageReference Include="RocketMod.Modern.Dependencies" Version="1.*-*">
+			<IncludeAssets>compile</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="RocketMod.Modern.Generator" Version="1.*-*" />
+		<PackageReference Include="System.ValueTuple" Version="4.5.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="SmartUI" HintPath="lib\SmartUI.dll" />
+		<Reference Include="Uconomy" HintPath="lib\Uconomy.dll" />
+	</ItemGroup>
+
+</Project>
