@@ -40,7 +40,7 @@ public partial class MarketController : ControllerBase
 
     public TabContext Context { get; private set; }
 
-    public async Task UpdateContext(TabContext newContext!!)
+    public async Task UpdateContext(TabContext newContext)
     {
         Context = newContext;
         await Context.Render();
